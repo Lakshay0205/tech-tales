@@ -1254,9 +1254,42 @@ input:focus, textarea:focus, select:focus {
 /* ─── RESPONSIVE ─────────────────────────────────────────────────────────── */
 @media (min-width: 768px) { .show-mobile  { display: none !important; } }
 @media (max-width: 767px) { .hidden-mobile { display: none !important; } }
+@media (max-width: 1024px) {
+  .home-expertise-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+  .home-digital-strip {
+    grid-template-columns: 1fr !important;
+  }
+  .home-why-grid {
+    grid-template-columns: repeat(2, minmax(220px, 1fr)) !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-shell {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+  .hhv-col {
+    display: flex !important;
+    width: min(100%, 360px) !important;
+    flex: 0 0 auto !important;
+    margin: 0 auto !important;
+    opacity: 1 !important;
+  }
+}
+
 @media (max-width: 767px) {
   .section-wrap { padding: 80px 20px; }
   .btn-primary, .btn-ghost { padding: 14px 28px; }
+  .home-why-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .hhv-col {
+    width: min(100%, 300px) !important;
+  }
 }
 
 /* ─── REDUCED MOTION ─────────────────────────────────────────────────────── */

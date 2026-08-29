@@ -265,7 +265,7 @@ export default function Hero() {
       <div className="page-ambient-orb page-ambient-orb--cyan" style={{ right: '16%', bottom: '18%', width: '220px', height: '220px', opacity: 0.16, zIndex: 0 }} />
 
       {/* Content + right visual */}
-      <div className="container" style={{ position: 'relative', zIndex: 1, display: 'flex', alignItems: 'center', gap: '48px' }}>
+      <div className="container hero-shell" style={{ position: 'relative', zIndex: 1, display: 'flex', alignItems: 'center', gap: '48px' }}>
         <div style={{ position: 'relative', flex: '1 1 0', minWidth: 0 }}>
           <div ref={eyebrowRef} style={{ marginBottom: '44px' }}>
             <span className="eyebrow">Digital Agency — 2025</span>
