@@ -510,7 +510,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="home-expertise-grid" style={{ display: 'grid', gridTemplateColumns: 'minmax(390px, 1fr) minmax(390px, 1fr)', gap: '52px', marginBottom: '54px' }}>
+          <div className="home-expertise-grid" style={{ display: 'grid', gap: '52px', marginBottom: '54px' }}>
             {/* Strategy & Growth column */}
             <div ref={techColRef}>
               <div style={{
@@ -555,7 +555,7 @@ export default function Home() {
               <span className="home-service-heading home-service-heading--digital eyebrow" style={{ display: 'inline-flex', fontSize: 'clamp(0.68rem, 1.1vw, 0.78rem)', fontWeight: 700, letterSpacing: '0.22em' }}>03 — DIGITAL & TECHNOLOGY</span>
             </div>
             <div style={{ padding: '28px 28px 24px', borderRadius: '20px', background: 'linear-gradient(145deg, rgba(17,21,32,0.94) 0%, rgba(11,15,26,0.98) 100%)', border: '1px solid rgba(255,255,255,0.08)', boxShadow: '0 0 40px rgba(78,205,196,0.08), inset 0 1px 0 rgba(255,255,255,0.04)', transition: 'border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease' }}>
-              <div className="home-digital-strip" style={{ display: 'grid', gridTemplateColumns: 'minmax(420px, 1fr)', gap: '0' }}>
+              <div className="home-digital-strip" style={{ display: 'grid', gap: '0' }}>
                 {digitalServices.map((label, i) => (
                   <ServiceItem key={label} label={label} index={i} />
                 ))}
@@ -589,7 +589,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="home-why-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(220px, 1fr))', gap: '16px' }}>
+          <div className="home-why-grid" style={{ display: 'grid', gap: '16px' }}>
             {whyItems.map((item, i) => (
               <WhyCard key={item.n} item={item} index={i} allRefs={whyCardRefs} itemsRef={whyItemsRef} />
             ))}

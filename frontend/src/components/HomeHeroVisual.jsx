@@ -182,6 +182,43 @@ export default function HomeHeroVisual() {
           0%,100% { transform: translateY(0px); }
           50%      { transform: translateY(-8px); }
         }
+
+        @media (max-width: 767px) {
+          .hhv-crystal-wrap {
+            width: min(100%, 300px) !important;
+            height: min(100%, 300px) !important;
+          }
+          .hhv-svg {
+            width: min(74vw, 240px) !important;
+            height: min(74vw, 240px) !important;
+          }
+          .hhv-floater {
+            animation-duration: 9s !important;
+          }
+          .hhv-poly-group,
+          .hhv-poly-group-inner,
+          .hhv-hex-ring,
+          .hhv-flow-line,
+          .hhv-flow-line--slow,
+          .hhv-scan-line,
+          .hhv-node-pulse,
+          .hhv-node-pulse--b,
+          .hhv-node-pulse--c,
+          .hhv-node-pulse--d {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+          }
+          .hhv-metric {
+            transform: scale(0.82);
+            min-width: 74px;
+            padding: 8px 10px;
+          }
+          .hhv-pill {
+            transform: scale(0.82);
+            top: 4% !important;
+            right: 0 !important;
+          }
+        }
       `}</style>
 
       <div className="hhv-crystal-wrap">
