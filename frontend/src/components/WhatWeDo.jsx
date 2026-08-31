@@ -135,7 +135,7 @@ export default function WhatWeDo() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 xl:grid-cols-[1.05fr_0.95fr] gap-6 items-start">
+        <div className="home-what-we-do-grid grid grid-cols-1 xl:grid-cols-[1.05fr_0.95fr] gap-6 items-start">
           <div className="rounded-[28px] border border-white/[0.08] bg-white/[0.03] p-3 shadow-[0_30px_80px_rgba(0,0,0,0.35)]">
             <div className="relative overflow-hidden rounded-[22px]">
               <img src={showcaseImage} alt="Workspace with laptop and design materials" className="h-[420px] w-full object-cover" loading="lazy" />
@@ -150,7 +150,7 @@ export default function WhatWeDo() {
             </div>
           </div>
 
-          <div className="grid gap-5">
+          <div className="home-what-we-do-stacks grid gap-5">
             <Cluster label="Tech & Development" services={tech} fromX={-80} />
             <Cluster label="Creative & Marketing" services={creative} fromX={80} linkTo="/services" />
           </div>

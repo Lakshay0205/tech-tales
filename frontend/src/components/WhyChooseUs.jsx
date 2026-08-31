@@ -79,12 +79,12 @@ export default function WhyChooseUs() {
           </h2>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px' }}>
+        <div className="why-card-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px' }}>
           {items.map((item, i) => (
             <div
               key={item.n}
               ref={el => { itemsRef.current[i] = el; cardRefs.current[i] = el }}
-              className="card"
+              className="card why-card-item"
               style={{
                 padding: '44px 36px 36px',
                 display: 'flex', flexDirection: 'column', gap: '12px',

@@ -62,7 +62,20 @@ export default function OurProcess() {
     let pendingProgress = -1
 
     const applyProgress = (p) => {
-      lineFillRef.current.style.transform = `scaleX(${p})`
+      const mobile = window.innerWidth <= 767
+      if (mobile) {
+        lineFillRef.current.style.transform = `scaleY(${p})`
+        lineFillRef.current.style.width = '3px'
+        lineFillRef.current.style.height = '100%'
+        lineFillRef.current.style.left = '20px'
+        lineFillRef.current.style.top = '0'
+      } else {
+        lineFillRef.current.style.transform = `scaleX(${p})`
+        lineFillRef.current.style.width = '100%'
+        lineFillRef.current.style.height = '2px'
+        lineFillRef.current.style.left = '0'
+        lineFillRef.current.style.top = '0'
+      }
 
       dotRefs.current.forEach((el, i) => {
         if (!el) return
@@ -74,7 +87,7 @@ export default function OurProcess() {
           ? 'radial-gradient(circle, #F4E5B2, #D4AF37)'
           : 'rgba(255,255,255,0.15)'
         el.style.boxShadow  = active ? '0 0 16px rgba(212,175,55,0.8), 0 0 32px rgba(212,175,55,0.3)' : 'none'
-        el.style.transform  = active ? 'translate(-50%, -50%) scale(1.4)' : 'translate(-50%, -50%) scale(1)'
+        el.style.transform  = active ? (mobile ? 'translateY(-50%) scale(1.4)' : 'translate(-50%, -50%) scale(1.4)') : (mobile ? 'translateY(-50%) scale(1)' : 'translate(-50%, -50%) scale(1)')
 
         const icon = iconRefs.current[i]
         if (icon && active && icon.dataset.shown !== '1') {
@@ -113,9 +126,37 @@ export default function OurProcess() {
       },
     })
 
+    const handleResize = () => {
+      if (window.innerWidth <= 767) {
+        dotRefs.current.forEach((el, i) => {
+          if (!el) return
+          el.style.left = '20px'
+          el.style.top = `${20 + i * 18}%`
+          el.style.transform = 'translateY(-50%)'
+        })
+        if (lineFillRef.current) {
+          lineFillRef.current.style.width = '3px'
+          lineFillRef.current.style.height = '100%'
+          lineFillRef.current.style.left = '20px'
+          lineFillRef.current.style.top = '0'
+        }
+      } else {
+        dotRefs.current.forEach((el, i) => {
+          if (!el) return
+          el.style.left = `${(i / (steps.length - 1)) * 100}%`
+          el.style.top = '50%'
+          el.style.transform = 'translate(-50%, -50%)'
+        })
+      }
+    }
+
+    handleResize()
+    window.addEventListener('resize', handleResize)
+
     return () => {
       if (rafId !== null) cancelAnimationFrame(rafId)
       t.kill()
+      window.removeEventListener('resize', handleResize)
     }
   }, [])
 
@@ -152,7 +193,7 @@ export default function OurProcess() {
         </div>
 
         {/* Progress line */}
-        <div style={{ position: 'relative', height: '2px', marginBottom: '72px' }}>
+        <div className="process-track" style={{ position: 'relative', height: '2px', marginBottom: '72px' }}>
           <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(255,255,255,0.07)', borderRadius: '1px' }} />
           <div ref={lineFillRef} style={{
             position: 'absolute', inset: 0,
@@ -179,10 +220,11 @@ export default function OurProcess() {
         </div>
 
         {/* Step cards */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', gap: '24px', flexWrap: 'wrap' }}>
+        <div className="process-step-container" style={{ display: 'flex', justifyContent: 'space-between', gap: '24px', flexWrap: 'wrap' }}>
           {steps.map((s, i) => (
             <div
               key={s.n}
+              className="process-step-card"
               ref={el => { cardRefs.current[i] = el }}
               style={{ flex: '1 1 160px', position: 'relative', paddingTop: '16px' }}
             >
