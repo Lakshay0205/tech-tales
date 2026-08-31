@@ -1298,69 +1298,128 @@ input:focus, textarea:focus, select:focus {
     overflow-x: hidden !important;
     max-width: 100vw;
   }
+
+  *, *::before, *::after {
+    box-sizing: border-box !important;
+  }
+
+  img, svg, video, canvas, iframe, embed, object {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+  }
+
   .container,
   .container-narrow,
-  .container-tight {
+  .container-tight,
+  .section-wrap > .container,
+  .section-wrap > .container-narrow,
+  .section-wrap > .container-tight {
     max-width: 100% !important;
-    width: 100% !important;
-  }
-  .section-wrap { padding: 80px 20px; }
-  .btn-primary, .btn-ghost { padding: 14px 28px; }
-  .home-why-grid,
-  .why-card-grid,
-  .home-what-we-do-grid,
-  .home-what-we-do-stacks {
-    grid-template-columns: 1fr !important;
-  }
-  .home-what-we-do-grid {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    gap: 16px !important;
-    scroll-snap-type: x mandatory !important;
-    padding-bottom: 10px;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  .home-what-we-do-grid::-webkit-scrollbar {
-    display: none;
-  }
-  .home-what-we-do-grid > * {
-    min-width: 85vw !important;
-    max-width: 85vw !important;
-    scroll-snap-align: center;
-  }
-  .home-what-we-do-stacks {
-    display: flex !important;
-    flex-direction: row !important;
     width: 100% !important;
     min-width: 0 !important;
   }
-  .why-card-grid {
+
+  .section-wrap { padding: 80px 20px; }
+  .btn-primary, .btn-ghost { padding: 14px 28px; }
+
+  main,
+  section,
+  header,
+  footer,
+  nav,
+  aside,
+  div,
+  article,
+  ul,
+  ol,
+  li,
+  form,
+  .hero-shell,
+  .hero-shell > * {
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .page-bg,
+  .page-bg-grid,
+  .page-bg-orb-1,
+  .page-bg-orb-2,
+  .page-bg-grain,
+  .hero-deco-network,
+  .hero-page-orb,
+  .page-ambient-orb,
+  .service-grid-bg,
+  .portfolio-blob,
+  .pricing-graph,
+  .hero-deco-dot,
+  .hero-deco-line,
+  .about-founder-photo-overlay,
+  .page-bg-grid,
+  .page-bg-grain {
+    display: none !important;
+  }
+
+  .home-why-grid,
+  .why-card-grid,
+  .home-what-we-do-grid,
+  .home-what-we-do-stacks,
+  .about-founder-skill-grid,
+  .about-hero-stats,
+  .about-capability-row,
+  .portfolio-filters,
+  .service-badges,
+  .pricing-tier-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .home-what-we-do-grid,
+  .home-what-we-do-stacks,
+  .why-card-grid,
+  .portfolio-filters,
+  .service-badges,
+  .pricing-tier-grid {
     display: flex !important;
+    flex-wrap: nowrap !important;
     overflow-x: auto !important;
+    overflow-y: hidden !important;
     gap: 16px !important;
-    scroll-snap-type: x mandatory !important;
-    padding-bottom: 10px;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    scroll-snap-type: x proximity !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    padding: 0 4px 10px !important;
+    margin-right: -4px !important;
   }
-  .why-card-grid::-webkit-scrollbar {
-    display: none;
+
+  .home-what-we-do-grid::-webkit-scrollbar,
+  .home-what-we-do-stacks::-webkit-scrollbar,
+  .why-card-grid::-webkit-scrollbar,
+  .portfolio-filters::-webkit-scrollbar,
+  .service-badges::-webkit-scrollbar,
+  .pricing-tier-grid::-webkit-scrollbar {
+    display: none !important;
   }
-  .why-card-item {
-    min-width: 85vw !important;
-    width: 85vw !important;
-    max-width: 85vw !important;
-    scroll-snap-align: center;
-    flex-shrink: 0;
+
+  .home-what-we-do-grid > *,
+  .home-what-we-do-stacks > *,
+  .why-card-item,
+  .portfolio-filters > *,
+  .service-badges > *,
+  .pricing-tier-grid > * {
+    min-width: 84vw !important;
+    width: 84vw !important;
+    max-width: 84vw !important;
+    scroll-snap-align: start !important;
+    flex: 0 0 auto !important;
   }
+
   .process-track {
     position: relative !important;
     width: 2px !important;
     height: clamp(460px, 80vh, 720px) !important;
     margin: 0 0 0 18px !important;
   }
+
   .process-track > div:first-child {
     width: 100% !important;
     height: 100% !important;
@@ -1368,6 +1427,7 @@ input:focus, textarea:focus, select:focus {
     top: 0 !important;
     background: rgba(255,255,255,0.09) !important;
   }
+
   .process-step-container {
     display: flex !important;
     flex-direction: column !important;
@@ -1375,6 +1435,7 @@ input:focus, textarea:focus, select:focus {
     position: relative !important;
     padding-left: 32px !important;
   }
+
   .process-step-container::before {
     content: '';
     position: absolute;
@@ -1384,6 +1445,7 @@ input:focus, textarea:focus, select:focus {
     width: 2px;
     background: rgba(255,255,255,0.12);
   }
+
   .process-step-card {
     width: 100% !important;
     min-width: 0 !important;
@@ -1391,6 +1453,7 @@ input:focus, textarea:focus, select:focus {
     padding-left: 32px !important;
     padding-top: 0 !important;
   }
+
   .process-step-card::before {
     content: '';
     position: absolute;
@@ -1401,13 +1464,16 @@ input:focus, textarea:focus, select:focus {
     border-radius: 50%;
     background: rgba(255,255,255,0.2);
   }
+
   .process-step-card > div:nth-child(2) {
     padding-top: 8px !important;
   }
+
   .hhv-col {
     width: min(100%, 280px) !important;
     flex: 0 0 auto !important;
   }
+
   .hero-shell {
     width: 100% !important;
     max-width: 100vw !important;
@@ -1415,86 +1481,104 @@ input:focus, textarea:focus, select:focus {
     padding-left: 20px !important;
     padding-right: 20px !important;
   }
+
   .hero-shell > div:first-child {
     width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
   }
+
   .hero-shell h1 {
     max-width: 100% !important;
     margin-bottom: 24px !important;
   }
+
   .hero-shell p {
     margin-bottom: 34px !important;
   }
+
   .hero-shell .btn-primary,
   .hero-shell .btn-ghost {
     width: 100% !important;
     justify-content: center !important;
   }
-  .hero-shell [style*="gap: 60px"] {
+
+  .hero-shell [style*="gap: 60px"],
+  .hero-shell .hhv-metric,
+  .hero-shell .hhv-pill {
     gap: 24px !important;
   }
+
   .hero-shell .hhv-crystal-wrap {
     width: min(100%, 260px) !important;
     height: min(100%, 260px) !important;
   }
+
   .hero-shell .hhv-svg {
     width: min(70vw, 220px) !important;
     height: min(70vw, 220px) !important;
   }
+
   .hero-shell .hhv-metric,
   .hero-shell .hhv-pill {
     transform: scale(0.76) !important;
   }
+
   .hero-shell .hhv-floater {
     animation-duration: 9s !important;
   }
-  .hero-page-orb,
-  .page-ambient-orb,
-  .hero-deco-network,
-  .page-bg-grid,
-  .page-bg-orb-1,
-  .page-bg-orb-2,
-  .page-bg-grain,
-  .service-grid-bg,
-  .portfolio-blob,
-  .pricing-graph {
-    display: none !important;
-  }
+
   .card-glass,
   .btn-ghost,
   .nav-progress,
-  .about-image-frame::after,
-  .about-founder-photo-overlay,
   .home-service-heading {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
   }
-  .page-ambient-orb,
-  .hero-page-orb,
-  .hero-deco-dot,
-  .hero-deco-line,
-  .page-bg-orb-1,
-  .page-bg-orb-2 {
-    animation: none !important;
+
+  .card-glass,
+  .nav-progress,
+  .btn-ghost {
+    background: rgba(255,255,255,0.02) !important;
   }
-  .hero-page-orb {
-    opacity: 0.18 !important;
-    right: -26% !important;
-    width: 360px !important;
-    height: 360px !important;
-  }
+
   .about-founder-skill-grid,
   .about-hero-stats,
   .about-capability-row {
-    grid-template-columns: 1fr !important;
     display: grid !important;
+    grid-template-columns: 1fr !important;
     gap: 10px !important;
   }
+
+  .about-founder-card {
+    grid-template-columns: 1fr !important;
+  }
+
+  .about-founder-text {
+    padding: 24px 18px !important;
+  }
+
+  .about-team-section {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .about-team-headline {
+    font-size: clamp(2.2rem, 11vw, 3.2rem) !important;
+  }
+
+  .about-team-intro {
+    font-size: 0.98rem !important;
+  }
+
+  .about-team-tagline-inner {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+
+  .pricing-tier-grid,
   .portfolio-filters,
-  .service-badges,
-  .pricing-tier-grid {
+  .service-badges {
     overflow-x: auto !important;
     -webkit-overflow-scrolling: touch;
   }
