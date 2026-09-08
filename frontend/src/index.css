@@ -1629,23 +1629,41 @@ input:focus, textarea:focus, select:focus {
   }
 
   /* Keep the narrow Home scene readable: the gold metric collides with the 100% card at this width. */
-  .hhv-metric--tl { display: none !important; }
+  .hhv-metric--tl {
+    display: flex !important;
+    top: 1% !important;
+    left: 0 !important;
+    transform: scale(0.58) !important;
+    transform-origin: left top !important;
+  }
   .hhv-metric--bl {
     left: 0 !important;
-    bottom: 12% !important;
-    transform: scale(0.72) !important;
+    bottom: 1% !important;
+    transform: scale(0.58) !important;
     transform-origin: left bottom !important;
   }
   .hhv-metric--br {
     right: 0 !important;
-    bottom: 6% !important;
-    transform: scale(0.72) !important;
+    bottom: 1% !important;
+    transform: scale(0.58) !important;
     transform-origin: right bottom !important;
   }
   .hhv-pill {
     transform: scale(0.72) !important;
     transform-origin: right top !important;
   }
+
+  .chv-svg {
+    width: min(88vw, 270px) !important;
+    height: min(88vw, 270px) !important;
+    max-width: 270px !important;
+    max-height: 270px !important;
+  }
+  .chv-floater { animation-duration: 5.5s !important; }
+  .chv-wave-1, .chv-wave-2, .chv-wave-3 { animation-duration: 3s !important; }
+  .chv-envelope { animation-duration: 5s !important; }
+  .chv-envelope-2 { animation-duration: 6.5s !important; }
+  .chv-envelope-3 { animation-duration: 4.8s !important; }
 
   .shv-tag--growth {
     transform: translateX(-50%) scale(0.78) !important;
