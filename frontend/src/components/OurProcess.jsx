@@ -36,6 +36,7 @@ export default function OurProcess() {
   const iconRefs    = useRef([])
   const cardRefs    = useRef([])
   const headRef     = useRef(null)
+  const flowRef     = useRef(null)
 
   useEffect(() => {
     if (!sectionRef.current) return
@@ -67,7 +68,7 @@ export default function OurProcess() {
         lineFillRef.current.style.transform = `scaleY(${p})`
         lineFillRef.current.style.width = '3px'
         lineFillRef.current.style.height = '100%'
-        lineFillRef.current.style.left = '20px'
+        lineFillRef.current.style.left = '0'
         lineFillRef.current.style.top = '0'
       } else {
         lineFillRef.current.style.transform = `scaleX(${p})`
@@ -89,6 +90,12 @@ export default function OurProcess() {
         el.style.boxShadow  = active ? '0 0 16px rgba(212,175,55,0.8), 0 0 32px rgba(212,175,55,0.3)' : 'none'
         el.style.transform  = active ? (mobile ? 'translateY(-50%) scale(1.4)' : 'translate(-50%, -50%) scale(1.4)') : (mobile ? 'translateY(-50%) scale(1)' : 'translate(-50%, -50%) scale(1)')
 
+        const card = cardRefs.current[i]
+        if (card) {
+          card.dataset.active = active ? '1' : '0'
+          card.style.opacity = active ? '1' : '0.55'
+        }
+
         const icon = iconRefs.current[i]
         if (icon && active && icon.dataset.shown !== '1') {
           icon.dataset.shown = '1'
@@ -109,8 +116,8 @@ export default function OurProcess() {
     }
 
     const t = ScrollTrigger.create({
-      trigger: sectionRef.current,
-      start: 'top 60%', end: 'bottom 55%',
+      trigger: flowRef.current,
+      start: 'top 70%', end: 'bottom 55%',
       scrub: 2,
       onUpdate: (self) => {
         const p = self.progress
@@ -130,14 +137,14 @@ export default function OurProcess() {
       if (window.innerWidth <= 767) {
         dotRefs.current.forEach((el, i) => {
           if (!el) return
-          el.style.left = '20px'
+          el.style.left = '0'
           el.style.top = `${20 + i * 18}%`
           el.style.transform = 'translateY(-50%)'
         })
         if (lineFillRef.current) {
           lineFillRef.current.style.width = '3px'
           lineFillRef.current.style.height = '100%'
-          lineFillRef.current.style.left = '20px'
+          lineFillRef.current.style.left = '0'
           lineFillRef.current.style.top = '0'
         }
       } else {
@@ -192,6 +199,7 @@ export default function OurProcess() {
           </h2>
         </div>
 
+        <div ref={flowRef} className="process-flow">
         {/* Progress line */}
         <div className="process-track" style={{ position: 'relative', height: '2px', marginBottom: '72px' }}>
           <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(255,255,255,0.07)', borderRadius: '1px' }} />
@@ -280,6 +288,7 @@ export default function OurProcess() {
               </div>
             </div>
           ))}
+        </div>
         </div>
       </div>
     </section>

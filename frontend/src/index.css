@@ -1597,15 +1597,23 @@ input:focus, textarea:focus, select:focus {
   .home-expertise-grid { grid-template-columns: 1fr !important; }
   .home-service-heading { max-width: 100% !important; padding: 9px 12px !important; }
 
-  .process-track {
+  .process-flow {
     position: relative !important;
-    width: 2px !important;
-    height: clamp(460px, 80vh, 720px) !important;
-    margin: 0 0 0 18px !important;
+    padding-left: 48px !important;
+  }
+
+  .process-track {
+    position: absolute !important;
+    left: 20px !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: 3px !important;
+    height: auto !important;
+    margin: 0 !important;
   }
 
   .process-track > div:first-child {
-    width: 100% !important;
+    width: 3px !important;
     height: 100% !important;
     left: 0 !important;
     top: 0 !important;
@@ -1617,36 +1625,30 @@ input:focus, textarea:focus, select:focus {
     flex-direction: column !important;
     gap: 20px !important;
     position: relative !important;
-    padding-left: 32px !important;
-  }
-
-  .process-step-container::before {
-    content: '';
-    position: absolute;
-    left: 18px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: rgba(255,255,255,0.12);
+    padding-left: 0 !important;
   }
 
   .process-step-card {
     width: 100% !important;
     min-width: 0 !important;
     flex: 1 1 auto !important;
-    padding-left: 32px !important;
+    padding-left: 0 !important;
     padding-top: 0 !important;
+    opacity: 0.55;
+    transition: opacity 0.35s ease, transform 0.35s ease, background 0.35s ease, box-shadow 0.35s ease;
   }
 
   .process-step-card::before {
-    content: '';
-    position: absolute;
-    left: -32px;
-    top: 16px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.2);
+    display: none !important;
+  }
+
+  .process-step-card[data-active="1"] {
+    opacity: 1 !important;
+    padding: 18px 16px 20px !important;
+    margin-left: -16px !important;
+    border-radius: 16px;
+    background: rgba(212,175,55,0.055);
+    box-shadow: inset 2px 0 0 rgba(212,175,55,0.8), 0 0 28px rgba(212,175,55,0.06);
   }
 
   .process-step-card > div:nth-child(2) {
