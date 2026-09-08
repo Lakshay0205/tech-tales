@@ -214,7 +214,7 @@ export default function Portfolio() {
         }}>WORK</div>
 
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <div ref={heroRef} style={{ display: 'flex', alignItems: 'center', gap: '48px' }}>
+          <div ref={heroRef} className="page-hero-layout" style={{ display: 'flex', alignItems: 'center', gap: '48px' }}>
             <div style={{ flex: '1 1 0', minWidth: 0 }}>
               <span className="eyebrow" style={{ marginBottom: '32px', display: 'inline-flex' }}>Portfolio</span>
               <h1 style={{

@@ -208,8 +208,8 @@ export default function CTABanner() {
         </p>
 
         <div ref={btnRef}>
-          <Link to="/contact" className="btn-primary" style={{ fontSize: '0.6875rem', display: 'inline-flex', alignItems: 'center', gap: '10px' }}>
-            <img src="/logo-icon.png" alt="Tech&Tales" style={{ height: 18, width: 'auto', opacity: 0.95 }} />
+          <Link to="/contact" className="btn-primary cta-button" style={{ fontSize: '0.6875rem', display: 'inline-flex', alignItems: 'center', gap: '10px' }}>
+            <img className="cta-button-logo" src="/logo-icon.png" alt="Tech&Tales" style={{ height: 18, width: 'auto', opacity: 0.95 }} />
             LET’S START A CONVERSATION →
             <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
               <path d="M1 10L10 1M10 1H3.5M10 1V7.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>

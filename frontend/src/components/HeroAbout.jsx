@@ -65,6 +65,7 @@ export default function HeroAbout() {
           </div>
 
           <motion.div
+            className="page-hero-visual"
             initial={{ opacity: 0, scale: 0.96, y: 28 }}
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true, amount: 0.35 }}

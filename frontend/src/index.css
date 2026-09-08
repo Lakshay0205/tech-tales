@@ -1328,6 +1328,44 @@ input:focus, textarea:focus, select:focus {
   .site-nav img { width: auto !important; height: 32px !important; }
   .site-nav > a span { font-size: 1rem !important; }
 
+  .page-hero-layout {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 34px !important;
+  }
+
+  .page-hero-layout > div:first-child {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .page-hero-layout h1 {
+    max-width: 100% !important;
+    overflow-wrap: anywhere;
+  }
+
+  .page-hero-visual {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .cta-button {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 14px 16px !important;
+    justify-content: center !important;
+    white-space: normal !important;
+    text-align: center;
+  }
+
+  .cta-button-logo {
+    width: 18px !important;
+    height: 18px !important;
+    max-width: 18px !important;
+    flex: 0 0 18px !important;
+    object-fit: contain !important;
+  }
+
   main,
   section,
   header,
@@ -1480,6 +1518,47 @@ input:focus, textarea:focus, select:focus {
   .shv-wrap {
     width: min(100%, 280px) !important;
     height: 280px !important;
+    min-height: 0 !important;
+    margin: 0 auto !important;
+  }
+
+  .chv-col,
+  .phv-col,
+  .prvhv-col,
+  .shv-col {
+    display: flex !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 auto !important;
+    min-height: 280px !important;
+  }
+
+  .chv-svg,
+  .phv-svg,
+  .prvhv-svg,
+  .shv-svg {
+    width: min(78vw, 240px) !important;
+    height: min(78vw, 240px) !important;
+    max-width: 240px !important;
+    max-height: 240px !important;
+  }
+
+  .hv-wrap {
+    width: 100% !important;
+    min-height: 260px !important;
+    margin-top: 8px !important;
+  }
+
+  .hhv-col {
+    display: flex !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 auto !important;
+    min-height: 280px !important;
+  }
+
+  .hhv-wrap {
+    min-height: 280px !important;
   }
 
   .hero-shell {
@@ -2270,5 +2349,10 @@ input:focus, textarea:focus, select:focus {
 }
 
 @media (max-width: 900px) {
-  .hhv-col { display: none; }
+  .hhv-col {
+    display: flex;
+    flex: 0 0 340px;
+    width: 340px;
+    margin: 0 auto;
+  }
 }
