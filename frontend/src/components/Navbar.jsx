@@ -55,7 +55,7 @@ export default function Navbar() {
       <div ref={progressRef} className="nav-progress" />
 
       {/* Main bar */}
-      <div style={{
+      <div className="site-nav-bar" style={{
         margin: scrolled ? '0' : '16px 24px 0',
         borderRadius: scrolled ? '0' : '20px',
         backgroundColor: scrolled ? 'rgba(6,8,16,0.95)' : 'rgba(6,8,16,0.72)',
@@ -68,7 +68,7 @@ export default function Navbar() {
           : '0 8px 48px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05)',
         transition: 'all 0.6s cubic-bezier(0.16,1,0.3,1)',
       }}>
-        <nav style={{
+        <nav className="site-nav" style={{
           maxWidth: '1280px', margin: '0 auto', padding: '0 28px',
           height: scrolled ? '64px' : '68px',
           display: 'flex', alignItems: 'center', justifyContent: 'space-between',

@@ -1323,6 +1323,11 @@ input:focus, textarea:focus, select:focus {
   .section-wrap { padding: 80px 20px; }
   .btn-primary, .btn-ghost { padding: 14px 28px; }
 
+  .site-nav-bar { margin: 8px 10px 0 !important; border-radius: 14px !important; }
+  .site-nav { height: 58px !important; padding: 0 14px !important; }
+  .site-nav img { width: auto !important; height: 32px !important; }
+  .site-nav > a span { font-size: 1rem !important; }
+
   main,
   section,
   header,
@@ -1379,25 +1384,12 @@ input:focus, textarea:focus, select:focus {
   .portfolio-filters,
   .service-badges,
   .pricing-tier-grid {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
     gap: 16px !important;
-    scroll-snap-type: x proximity !important;
-    -webkit-overflow-scrolling: touch !important;
-    scrollbar-width: none !important;
-    padding: 0 4px 10px !important;
-    margin-right: -4px !important;
-  }
-
-  .home-what-we-do-grid::-webkit-scrollbar,
-  .home-what-we-do-stacks::-webkit-scrollbar,
-  .why-card-grid::-webkit-scrollbar,
-  .portfolio-filters::-webkit-scrollbar,
-  .service-badges::-webkit-scrollbar,
-  .pricing-tier-grid::-webkit-scrollbar {
-    display: none !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    margin-right: 0 !important;
   }
 
   .home-what-we-do-grid > *,
@@ -1406,12 +1398,19 @@ input:focus, textarea:focus, select:focus {
   .portfolio-filters > *,
   .service-badges > *,
   .pricing-tier-grid > * {
-    min-width: 84vw !important;
-    width: 84vw !important;
-    max-width: 84vw !important;
-    scroll-snap-align: start !important;
-    flex: 0 0 auto !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: initial !important;
   }
+
+  [style*="grid-template-columns"],
+  [style*="gridTemplateColumns"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  .home-expertise-grid { grid-template-columns: 1fr !important; }
+  .home-service-heading { max-width: 100% !important; padding: 9px 12px !important; }
 
   .process-track {
     position: relative !important;
@@ -1472,6 +1471,15 @@ input:focus, textarea:focus, select:focus {
   .hhv-col {
     width: min(100%, 280px) !important;
     flex: 0 0 auto !important;
+  }
+
+  .hhv-crystal-wrap,
+  .chv-wrap,
+  .phv-wrap,
+  .prvhv-wrap,
+  .shv-wrap {
+    width: min(100%, 280px) !important;
+    height: 280px !important;
   }
 
   .hero-shell {
