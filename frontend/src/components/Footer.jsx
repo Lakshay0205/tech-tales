@@ -67,15 +67,15 @@ export default function Footer() {
         Tech&Tales
       </div>
 
-      <div className="container" style={{ position: 'relative', zIndex: 1, padding: '100px 40px 0' }}>
+      <div className="container footer-shell" style={{ position: 'relative', zIndex: 1, padding: '100px 40px 0' }}>
 
         {/* Top section */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '64px', marginBottom: '80px' }}>
+        <div className="footer-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '64px', marginBottom: '80px' }}>
 
           {/* Brand */}
           <div style={{ gridColumn: 'span 1' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
-              <img src="/logo.png" alt="Tech&Tales" style={{ height: 72, width: 'auto', display: 'block' }} />
+              <img className="footer-brand-logo" src="/logo.png" alt="Tech&Tales" style={{ height: 72, width: 'auto', display: 'block' }} />
               <div>
                 <span style={{
                   fontFamily: "'Fraunces', Georgia, serif",
@@ -198,7 +198,7 @@ export default function Footer() {
         <div style={{ height: '1px', background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.06) 20%, rgba(255,255,255,0.06) 80%, transparent)', marginBottom: '32px' }} />
 
         {/* Bottom bar */}
-        <div style={{
+        <div className="footer-bottom" style={{
           display: 'flex', flexWrap: 'wrap', alignItems: 'center',
           justifyContent: 'space-between', gap: '16px',
           paddingBottom: '40px',

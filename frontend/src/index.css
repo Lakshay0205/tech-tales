@@ -1387,6 +1387,40 @@ input:focus, textarea:focus, select:focus {
     flex: 0 0 18px !important;
   }
 
+  .footer-shell {
+    padding: 56px 20px 0 !important;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+    margin-bottom: 48px !important;
+  }
+
+  .footer-brand-logo {
+    width: auto !important;
+    height: 44px !important;
+    max-width: 120px !important;
+    object-fit: contain !important;
+  }
+
+  .footer-grid > div:not(:first-child) > span {
+    margin-bottom: 14px !important;
+  }
+
+  .footer-bottom {
+    align-items: flex-start !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    padding-bottom: 24px !important;
+  }
+
+  .footer-bottom p {
+    margin: 0 !important;
+    font-size: 0.625rem !important;
+    line-height: 1.5 !important;
+  }
+
   .hero-shell {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
