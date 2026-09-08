@@ -232,6 +232,7 @@ export default function Hero() {
 
   return (
     <section
+      className="home-hero-section"
       ref={sectionRef}
       style={{
         minHeight: '100vh',

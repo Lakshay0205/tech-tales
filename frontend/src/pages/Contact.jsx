@@ -77,7 +77,7 @@ export default function Contact() {
   return (
     <main>
       {/* ── Hero ── */}
-      <section style={{ backgroundColor: '#060810', padding: '160px 40px 120px', position: 'relative', overflow: 'hidden' }}>
+      <section className="page-hero-section" style={{ backgroundColor: '#060810', padding: '160px 40px 120px', position: 'relative', overflow: 'hidden' }}>
         <div className="hero-page-orb" style={{ right: '-2vw', top: '58%', width: '360px', height: '360px', opacity: 0.42 }} />
         <div className="page-ambient-orb page-ambient-orb--coral" style={{ left: '10%', bottom: '8%', width: '220px', height: '220px', opacity: 0.16 }} />
         <div style={{

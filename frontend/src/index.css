@@ -1323,6 +1323,39 @@ input:focus, textarea:focus, select:focus {
   .section-wrap { padding: 80px 20px; }
   .btn-primary, .btn-ghost { padding: 14px 28px; }
 
+  .home-hero-section,
+  .page-hero-section {
+    padding: 112px 20px 80px !important;
+  }
+
+  .hero-shell {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .hero-headline-line {
+    overflow: visible !important;
+    max-width: 100% !important;
+  }
+
+  .hero-headline-line .char-inner {
+    display: inline !important;
+  }
+
+  .hero-headline-line:first-child .supporting-word {
+    display: block !important;
+    margin-left: 0 !important;
+    font-size: clamp(2.15rem, 9vw, 3rem) !important;
+    line-height: 1.08 !important;
+  }
+
+  .hero-shell h1 {
+    font-size: clamp(2.65rem, 11vw, 4.25rem) !important;
+    line-height: 1.08 !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+  }
+
   .site-nav-bar { margin: 8px 10px 0 !important; border-radius: 14px !important; }
   .site-nav { height: 58px !important; padding: 0 14px !important; }
   .site-nav img { width: auto !important; height: 32px !important; }
@@ -1347,6 +1380,27 @@ input:focus, textarea:focus, select:focus {
   .page-hero-visual {
     width: 100% !important;
     max-width: 100% !important;
+  }
+
+  .page-hero-layout > div:first-child {
+    display: contents !important;
+  }
+
+  .page-hero-layout > .chv-col,
+  .page-hero-layout > .phv-col,
+  .page-hero-layout > .prvhv-col,
+  .page-hero-layout > .shv-col {
+    order: 2;
+  }
+
+  .page-hero-layout .service-hero-categories {
+    order: 5;
+    width: 100% !important;
+    margin-top: 26px !important;
+  }
+
+  .page-hero-layout .service-hero-copy {
+    order: 4;
   }
 
   .cta-button {

@@ -339,7 +339,7 @@ export default function Services() {
   return (
     <main>
       {/* ── Hero ── */}
-      <section style={{ backgroundColor: '#060810', padding: '160px 40px 120px', position: 'relative', overflow: 'hidden' }}>
+      <section className="page-hero-section" style={{ backgroundColor: '#060810', padding: '160px 40px 120px', position: 'relative', overflow: 'hidden' }}>
         <div style={{
           position: 'absolute', top: '-10%', right: '-5%',
           width: '700px', height: '700px', borderRadius: '50%',
@@ -386,7 +386,7 @@ export default function Services() {
                 </span>
               </h1>
 
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '48px', flexWrap: 'wrap' }}>
+              <div className="service-hero-copy" style={{ display: 'flex', alignItems: 'flex-start', gap: '48px', flexWrap: 'wrap' }}>
                 <div style={{
                   width: '2px', flexShrink: 0, alignSelf: 'stretch', minHeight: '80px',
                   background: 'linear-gradient(180deg, #D4AF37 0%, rgba(212,175,55,0.08) 100%)',
@@ -401,7 +401,7 @@ export default function Services() {
                 </p>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px', marginTop: '64px' }}>
+              <div className="service-hero-categories" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px', marginTop: '64px' }}>
                 {CATEGORIES.map(({ label, color, rgb, tagline, services }) => (
                   <div key={label} style={{
                     padding: '28px 28px 24px',

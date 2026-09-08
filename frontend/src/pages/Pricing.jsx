@@ -62,7 +62,7 @@ export default function Pricing() {
   return (
     <main>
       {/* ── Hero ── */}
-      <section style={{ backgroundColor: '#060810', padding: '160px 40px 120px', position: 'relative', overflow: 'hidden' }}>
+      <section className="page-hero-section" style={{ backgroundColor: '#060810', padding: '160px 40px 120px', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle at top right, rgba(78,205,196,0.08), transparent 32%), linear-gradient(135deg, rgba(255,255,255,0.03), transparent)', opacity: 0.6, pointerEvents: 'none' }} />
         <div className="page-ambient-orb page-ambient-orb--gold" style={{ right: '4%', top: '12%', width: '280px', height: '280px', opacity: 0.16 }} />
         <div className="page-ambient-orb page-ambient-orb--cyan" style={{ left: '10%', bottom: '8%', width: '220px', height: '220px', opacity: 0.16 }} />

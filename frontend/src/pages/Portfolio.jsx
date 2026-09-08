@@ -190,7 +190,7 @@ export default function Portfolio() {
   return (
     <main>
       {/* ── Hero ── */}
-      <section style={{ backgroundColor: '#060810', padding: '160px 40px 120px', position: 'relative', overflow: 'hidden' }}>
+      <section className="page-hero-section" style={{ backgroundColor: '#060810', padding: '160px 40px 120px', position: 'relative', overflow: 'hidden' }}>
         <div className="portfolio-blob" style={{ left: '8%', top: '15%', background: 'radial-gradient(circle, rgba(78,205,196,0.28) 0%, transparent 72%)' }} />
         <div className="portfolio-blob" style={{ right: '4%', bottom: '10%', background: 'radial-gradient(circle, rgba(230,60,109,0.24) 0%, transparent 72%)' }} />
         <div style={{
