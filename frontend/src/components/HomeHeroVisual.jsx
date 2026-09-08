@@ -205,8 +205,7 @@ export default function HomeHeroVisual() {
           .hhv-node-pulse--b,
           .hhv-node-pulse--c,
           .hhv-node-pulse--d {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
+            animation-play-state: running !important;
           }
           .hhv-metric {
             transform: scale(0.82);

@@ -1303,10 +1303,23 @@ input:focus, textarea:focus, select:focus {
     box-sizing: border-box !important;
   }
 
-  img, svg, video, canvas, iframe, embed, object {
+  img, video, canvas, iframe, embed, object {
     max-width: 100% !important;
     height: auto !important;
     display: block !important;
+  }
+
+  svg {
+    max-width: 100% !important;
+    display: block !important;
+  }
+
+  .hero-shell svg,
+  .page-hero-layout svg,
+  .about-hero-layout svg {
+    height: auto !important;
+    width: auto;
+    max-width: 100% !important;
   }
 
   .container,
@@ -2013,8 +2026,8 @@ input:focus, textarea:focus, select:focus {
   .hv-cross--h    { width: 200px; }
   .hv-cross--v    { height: 200px; }
   .hv-sphere      { width: 58px; height: 58px; }
-  .hv-chip        { display: none; }
-  .hv-node        { display: none; }
+  .hv-chip        { transform: scale(0.82); }
+  .hv-node        { display: block; }
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
