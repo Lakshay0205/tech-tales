@@ -1341,6 +1341,52 @@ input:focus, textarea:focus, select:focus {
     padding: 112px 20px 80px !important;
   }
 
+  .cta-section {
+    padding: 72px 20px !important;
+  }
+
+  .cta-section .cta-ticker {
+    margin-bottom: 56px !important;
+    padding: 14px 0 !important;
+  }
+
+  .cta-section h1,
+  .cta-section h2,
+  .cta-section .cta-heading {
+    max-width: 100% !important;
+    font-size: clamp(2rem, 9vw, 2.75rem) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.02em !important;
+  }
+
+  .cta-section p,
+  .cta-section .cta-copy {
+    max-width: 100% !important;
+    margin-bottom: 32px !important;
+    font-size: 0.98rem !important;
+    line-height: 1.7 !important;
+  }
+
+  .cta-section .btn-primary {
+    width: 100% !important;
+    max-width: 320px !important;
+    min-height: 52px !important;
+    padding: 14px 16px !important;
+    justify-content: center !important;
+    font-size: 0.56rem !important;
+    letter-spacing: 0.12em !important;
+    white-space: normal !important;
+  }
+
+  .cta-section .btn-primary img,
+  .cta-section .cta-button-logo {
+    width: 18px !important;
+    height: 18px !important;
+    max-width: 18px !important;
+    object-fit: contain !important;
+    flex: 0 0 18px !important;
+  }
+
   .hero-shell {
     padding-top: 0 !important;
     padding-bottom: 0 !important;

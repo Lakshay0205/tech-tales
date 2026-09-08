@@ -297,7 +297,7 @@ export default function Portfolio() {
       </section>
 
       {/* ── CTA ── */}
-      <section style={{ backgroundColor: '#060810', borderTop: '1px solid rgba(255,255,255,0.05)', padding: '120px 40px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+      <section className="cta-section" style={{ backgroundColor: '#060810', borderTop: '1px solid rgba(255,255,255,0.05)', padding: '120px 40px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
         <div style={{
           position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)',
           width: '600px', height: '600px', borderRadius: '50%',

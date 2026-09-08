@@ -119,7 +119,7 @@ export default function CTABanner() {
       borderTop: '1px solid rgba(255,255,255,0.05)',
       backgroundImage: 'linear-gradient(135deg, rgba(4,6,8,0.92), rgba(10,14,20,0.9)), url(https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80)',
       backgroundSize: 'cover', backgroundPosition: 'center',
-    }} className="section-wrap">
+    }} className="section-wrap cta-section">
 
       {/* Breathing glow */}
       <div ref={glowRef} style={{
@@ -128,7 +128,7 @@ export default function CTABanner() {
       }} />
 
       {/* Architectural grid */}
-      <div style={{
+      <div className="cta-ticker" style={{
         position: 'absolute', inset: 0, pointerEvents: 'none',
         backgroundImage: [
           'linear-gradient(rgba(201,168,76,0.022) 1px, transparent 1px)',
@@ -188,7 +188,7 @@ export default function CTABanner() {
           <div style={{ height: '1px', width: '28px', background: 'linear-gradient(90deg, rgba(201,168,76,0.5), transparent)' }} />
         </div>
 
-        <h2 ref={headRef} style={{
+        <h2 ref={headRef} className="cta-heading" style={{
           fontFamily: "'Fraunces', Georgia, serif",
           fontSize: 'clamp(2.75rem, 6vw, 5.5rem)', fontWeight: 400,
           lineHeight: 1.0, letterSpacing: '-0.035em',
@@ -198,7 +198,7 @@ export default function CTABanner() {
           Let’s build something worth talking about.
         </h2>
 
-        <p ref={subRef} style={{
+        <p ref={subRef} className="cta-copy" style={{
           fontFamily: "'Geist', system-ui, sans-serif",
           fontSize: 'clamp(0.9375rem, 1.1vw, 1.0625rem)', lineHeight: 1.75,
           color: '#6B7280', maxWidth: '440px', margin: '0 auto 52px',
