@@ -269,7 +269,7 @@ export default function Hero() {
       <div className="container hero-shell" style={{ position: 'relative', zIndex: 1, display: 'flex', alignItems: 'center', gap: '48px' }}>
         <div style={{ position: 'relative', flex: '1 1 0', minWidth: 0 }}>
           <div ref={eyebrowRef} style={{ marginBottom: '44px' }}>
-            <span className="eyebrow">Digital Agency — 2025</span>
+            <span className="eyebrow">Building Digital stories</span>
           </div>
 
           <div ref={decoRef} className="hero-deco-network" aria-hidden="true">
