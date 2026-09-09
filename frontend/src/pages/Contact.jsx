@@ -183,7 +183,7 @@ export default function Contact() {
 
                 <div style={{ marginTop: '20px' }}>
                   <p className="supporting-line" style={{ textAlign: 'left' }}>
-                    Prefer to talk directly? <a href="mailto:hello@techtales.in" style={{ color: '#E91E8C', textDecoration: 'none' }}>hello@techtales.in</a> · +91 9910882929
+                    Prefer to talk directly? <a href="mailto:slakshay1002@gmail.com" style={{ color: '#E91E8C', textDecoration: 'none' }}>slakshay1002@gmail.com</a> · +91 9910882929
                   </p>
                 </div>
                 </>
@@ -294,7 +294,7 @@ export default function Contact() {
                 {
                   label: 'Email',
                     content: (
-                    <a href="mailto:hello@techtales.in" style={{
+                    <a href="mailto:slakshay1002@gmail.com" style={{
                       fontFamily: "'Geist', system-ui, sans-serif",
                       fontSize: '1rem', color: '#9CA3AF', textDecoration: 'none',
                       fontWeight: 300, transition: 'color 0.2s ease',
@@ -302,7 +302,7 @@ export default function Contact() {
                       onMouseEnter={e => { e.currentTarget.style.color = '#D4AF37' }}
                       onMouseLeave={e => { e.currentTarget.style.color = '#9CA3AF' }}
                     >
-                      hello@techtales.in
+                      slakshay1002@gmail.com
                     </a>
                   ),
                 },
