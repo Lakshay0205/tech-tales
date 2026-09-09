@@ -183,7 +183,7 @@ export default function Contact() {
 
                 <div style={{ marginTop: '20px' }}>
                   <p className="supporting-line" style={{ textAlign: 'left' }}>
-                    Prefer to talk directly? <a href="mailto:hello@techtales.in" style={{ color: '#E91E8C', textDecoration: 'none' }}>hello@techtales.in</a> · +91 9999999999
+                    Prefer to talk directly? <a href="mailto:hello@techtales.in" style={{ color: '#E91E8C', textDecoration: 'none' }}>hello@techtales.in</a> · +91 9910882929
                   </p>
                 </div>
                 </>
@@ -310,7 +310,7 @@ export default function Contact() {
                   label: 'WhatsApp',
                   content: (
                     <a
-                      href="https://wa.me/919999999999?text=Hi%2C%20I%27d%20like%20to%20discuss%20a%20project."
+                      href="https://wa.me/919910882929?text=Hi%2C%20I%27d%20like%20to%20discuss%20a%20project."
                       target="_blank" rel="noreferrer"
                       style={{
                         display: 'inline-flex', alignItems: 'center', gap: '8px',
