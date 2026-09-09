@@ -223,7 +223,7 @@ export default function Portfolio() {
                 lineHeight: 0.95, letterSpacing: '-0.035em', color: '#F0EDE8',
                 margin: '28px 0 32px 0', maxWidth: '640px',
               }}>
-                Work that <em className="supporting-word">moved</em> the needle.
+                <span style={{ color: '#ff5ca8' }}>Tales</span> We&apos;ve built
               </h1>
               <p className="supporting-line" style={{
                 fontFamily: "'Geist', system-ui, sans-serif",
@@ -312,7 +312,7 @@ export default function Portfolio() {
                 lineHeight: 0.95, letterSpacing: '-0.035em', color: '#F0EDE8',
                 margin: '28px 0 12px 0', maxWidth: '640px',
               }}>
-                Work that <span className="supporting-word">moved</span> the needle.
+                <span style={{ color: '#ff5ca8' }}>Tales</span> We&apos;ve built
               </h1>
               <p className="supporting-line" style={{
                 fontFamily: "'Geist', system-ui, sans-serif",
