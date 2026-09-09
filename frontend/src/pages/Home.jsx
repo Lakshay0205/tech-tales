@@ -30,6 +30,7 @@ const whyItems = [
   { n: '02', title: 'Creative Meets Performance', desc: 'Great ideas mean more when they deliver results. We bring creativity and data together to build marketing that performs.', rot: '3deg', icon: 'lightbulb' },
   { n: '03', title: 'One Team. One Direction.', desc: 'Strategy, content, media, SEO and creative work together under one roof, keeping your brand consistent at every touchpoint.', rot: '-3deg', icon: 'users' },
   { n: '04', title: 'Clear, Honest & Accountable', desc: 'No confusing reports. No empty promises. Just clear communication, transparent insights and work you can measure.', rot: '4deg', icon: 'shield' },
+  { n: '05', title: 'Built for Momentum', desc: 'Every decision creates useful progress now and a stronger foundation for what comes next.', rot: '-2deg', icon: 'spark' },
 ]
 
 const projects = [
@@ -268,12 +269,19 @@ function WhyCard({ item, index, allRefs, itemsRef }) {
         <path d="M12 3 4 6v7c0 6 4 9 8 10 4-1 8-4 8-10V6Z" />
         <path d="m9.5 12 2 2 4.5-5" />
       </svg>
+    ),
+    spark: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.55" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z" />
+        <path d="m19 16 .8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8L19 16Z" />
+      </svg>
     )
   }
 
   return (
     <div
       ref={el => { cardRef.current = el; allRefs.current[index] = el; itemsRef.current[index] = el }}
+      className={`why-card-shell why-card-shell--${index + 1}`}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onMouseEnter={handleMouseEnter}
