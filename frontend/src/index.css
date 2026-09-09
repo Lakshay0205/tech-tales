@@ -1666,8 +1666,27 @@ input:focus, textarea:focus, select:focus {
   .home-service-heading { max-width: 100% !important; padding: 9px 12px !important; }
 
   .home-why-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 18px !important;
+    display: flex !important;
+    grid-template-columns: none !important;
+    flex-wrap: nowrap !important;
+    gap: 16px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    padding: 4px 4px 18px !important;
+    margin-right: -4px !important;
+    scroll-snap-type: x mandatory !important;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .home-why-grid::-webkit-scrollbar { display: none; }
+
+  .home-why-grid > .why-card-shell {
+    flex: 0 0 84vw !important;
+    width: 84vw !important;
+    max-width: 84vw !important;
+    scroll-snap-align: start !important;
   }
 
   .why-card-shell {
@@ -1707,7 +1726,6 @@ input:focus, textarea:focus, select:focus {
   .why-card-shell:hover .why-card-radial { opacity: 1 !important; transition: opacity 0.4s ease; }
 
   @media (max-width: 480px) {
-    .home-why-grid { grid-template-columns: 1fr !important; }
     .why-card-shell:nth-child(odd),
     .why-card-shell:nth-child(even) { transform: none; }
     .why-card-shell { min-height: 250px; }
