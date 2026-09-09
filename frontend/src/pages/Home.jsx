@@ -626,14 +626,14 @@ export default function Home() {
         </div>
 
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <div ref={workHeadRef} style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', flexWrap: 'wrap', gap: '32px', marginBottom: '72px' }}>
-            <div>
+          <div ref={workHeadRef} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '32px', marginBottom: '72px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
               <span className="eyebrow" style={{ display: 'inline-flex' }}>Featured Work</span>
-              <h2 style={{ ...H2, marginTop: '28px' }}>Work that moved the <span className="supporting-word">needle</span>.</h2>
+              <h2 style={{ ...H2, marginTop: '28px', marginBottom: '0' }}>Work that moved the <span className="supporting-word">needle</span>.</h2>
+              <p style={{ ...BODY, maxWidth: '340px', marginTop: '18px', marginLeft: 'auto', fontSize: 'clamp(1rem, 1.2vw, 1.08rem)', lineHeight: 1.78, fontWeight: 300, textAlign: 'right' }}>
+                Real brands. Real work. Real results.
+              </p>
             </div>
-            <p style={{ ...BODY, maxWidth: '340px', fontSize: 'clamp(1rem, 1.2vw, 1.08rem)', lineHeight: 1.78, fontWeight: 300 }}>
-              Real brands. Real work. Real results.
-            </p>
           </div>
 
           {/* Asymmetric grid: 1 large left + 2 smaller right */}
