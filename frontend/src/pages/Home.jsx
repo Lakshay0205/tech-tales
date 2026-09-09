@@ -287,7 +287,13 @@ function WhyCard({ item, index, allRefs, itemsRef }) {
       onMouseEnter={handleMouseEnter}
       style={{
         padding: '44px 40px',
-        background: 'rgba(18,22,31,0.6)',
+        background: [
+          'radial-gradient(circle at 100% 0%, rgba(212,175,55,0.24), transparent 44%), linear-gradient(135deg, rgba(212,175,55,0.10), transparent 46%), linear-gradient(150deg, rgba(28,38,54,0.98), rgba(9,14,23,1))',
+          'radial-gradient(circle at 100% 0%, rgba(230,60,109,0.28), transparent 44%), linear-gradient(135deg, rgba(230,60,109,0.12), transparent 46%), linear-gradient(150deg, rgba(48,27,47,0.98), rgba(12,14,24,1))',
+          'radial-gradient(circle at 100% 0%, rgba(78,205,196,0.27), transparent 44%), linear-gradient(135deg, rgba(78,205,196,0.11), transparent 46%), linear-gradient(150deg, rgba(18,48,55,0.98), rgba(8,16,24,1))',
+          'radial-gradient(circle at 100% 0%, rgba(167,139,250,0.27), transparent 44%), linear-gradient(135deg, rgba(167,139,250,0.11), transparent 46%), linear-gradient(150deg, rgba(42,32,68,0.98), rgba(12,13,25,1))',
+          'radial-gradient(circle at 100% 0%, rgba(244,180,0,0.28), transparent 44%), linear-gradient(135deg, rgba(244,180,0,0.11), transparent 46%), linear-gradient(150deg, rgba(52,43,22,0.98), rgba(15,14,21,1))',
+        ][index],
         backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)',
         borderRadius: '20px',
         border: '1px solid rgba(255,255,255,0.08)',
