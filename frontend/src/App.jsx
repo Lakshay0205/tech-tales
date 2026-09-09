@@ -20,12 +20,10 @@ function ScrollManager() {
   useEffect(() => {
     const frame = requestAnimationFrame(() => {
       window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
-      const refresh = () => ScrollTrigger.refresh(true)
-      if ('requestIdleCallback' in window) {
-        const idleId = window.requestIdleCallback(refresh)
-        return () => window.cancelIdleCallback?.(idleId)
+      const refresh = () => {
+        ScrollTrigger.getAll().forEach(instance => instance.refresh())
       }
-      const timeoutId = window.setTimeout(refresh, 80)
+      const timeoutId = window.setTimeout(refresh, 50)
       return () => window.clearTimeout(timeoutId)
     })
     return () => cancelAnimationFrame(frame)
@@ -46,9 +44,9 @@ function PageBackground() {
 }
 
 const pageVariants = {
-  initial: { opacity: 0 },
-  enter:   { opacity: 1, transition: { duration: 0.35, ease: 'easeOut' } },
-  exit:    { opacity: 0, transition: { duration: 0.2,  ease: 'easeIn'  } },
+  initial: { opacity: 0, filter: 'blur(2px)' },
+  enter:   { opacity: 1, filter: 'blur(0px)', transition: { duration: 0.22, ease: 'easeOut' } },
+  exit:    { opacity: 0, filter: 'blur(1px)', transition: { duration: 0.14, ease: 'easeIn' } },
 }
 
 function PageFallback() {
@@ -58,8 +56,15 @@ function PageFallback() {
 function AnimatedRoutes() {
   const location = useLocation()
   return (
-    <AnimatePresence mode="sync">
-      <motion.div key={location.pathname} variants={pageVariants} initial="initial" animate="enter" exit="exit">
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={location.pathname}
+        variants={pageVariants}
+        initial="initial"
+        animate="enter"
+        exit="exit"
+        style={{ minHeight: '100vh' }}
+      >
         <Routes location={location}>
           <Route path="/"          element={<Home />} />
           <Route path="/about"     element={<About />} />
