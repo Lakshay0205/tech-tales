@@ -13,12 +13,12 @@ function ULink({ to, href, children, external = false }) {
     style: {
       fontFamily: "'Geist', system-ui, sans-serif",
       fontSize: '0.875rem', fontWeight: 300,
-      color: '#6B7280', textDecoration: 'none',
+      color: '#7B8592', textDecoration: 'none',
       display: 'inline-flex', alignItems: 'center', gap: '6px',
       transition: 'color 0.2s ease',
     },
     onMouseEnter: e => { e.currentTarget.style.color = '#C9A84C' },
-    onMouseLeave: e => { e.currentTarget.style.color = '#6B7280' },
+    onMouseLeave: e => { e.currentTarget.style.color = '#7B8592' },
   }
   if (href) return <a href={href} target={external ? '_blank' : undefined} rel={external ? 'noreferrer' : undefined} {...props}>{children}</a>
   return <Link to={to} {...props}>{children}</Link>
@@ -96,7 +96,7 @@ export default function Footer() {
             </div>
             <p style={{
               fontFamily: "'Geist', system-ui, sans-serif",
-              fontSize: '0.875rem', color: '#374151', lineHeight: 1.7,
+              fontSize: '0.875rem', color: '#6B7280', lineHeight: 1.7,
               maxWidth: '240px', fontWeight: 300,
             }}>
               A two-founder studio that builds and markets — engineering meets creativity, under one roof.
@@ -125,8 +125,8 @@ export default function Footer() {
           <div>
             <span style={{
               fontFamily: "'Geist', system-ui, sans-serif",
-              fontSize: '0.5625rem', fontWeight: 600, letterSpacing: '0.2em',
-              textTransform: 'uppercase', color: '#374151',
+              fontSize: '0.5625rem', fontWeight: 500, letterSpacing: '0.2em',
+              textTransform: 'uppercase', color: '#6B7280',
               display: 'block', marginBottom: '24px',
             }}>
               Pages
@@ -142,8 +142,8 @@ export default function Footer() {
           <div>
             <span style={{
               fontFamily: "'Geist', system-ui, sans-serif",
-              fontSize: '0.5625rem', fontWeight: 600, letterSpacing: '0.2em',
-              textTransform: 'uppercase', color: '#374151',
+              fontSize: '0.5625rem', fontWeight: 500, letterSpacing: '0.2em',
+              textTransform: 'uppercase', color: '#6B7280',
               display: 'block', marginBottom: '24px',
             }}>
               Get in Touch
@@ -165,8 +165,8 @@ export default function Footer() {
           <div>
             <span style={{
               fontFamily: "'Geist', system-ui, sans-serif",
-              fontSize: '0.5625rem', fontWeight: 600, letterSpacing: '0.2em',
-              textTransform: 'uppercase', color: '#374151',
+              fontSize: '0.5625rem', fontWeight: 500, letterSpacing: '0.2em',
+              textTransform: 'uppercase', color: '#6B7280',
               display: 'block', marginBottom: '24px',
             }}>
               Follow
@@ -206,14 +206,14 @@ export default function Footer() {
           <p style={{
             fontFamily: "'Geist', system-ui, sans-serif",
             fontSize: '0.6875rem', fontWeight: 400,
-            letterSpacing: '0.08em', color: '#1F2937',
+            letterSpacing: '0.08em', color: '#4B5563',
           }}>
             © 2025 Ashnalakshay. All rights reserved.
           </p>
           <p style={{
             fontFamily: "'Geist', system-ui, sans-serif",
             fontSize: '0.6875rem', fontWeight: 400,
-            letterSpacing: '0.08em', color: '#1F2937',
+            letterSpacing: '0.08em', color: '#4B5563',
           }}>
             Built by the founders.
           </p>
