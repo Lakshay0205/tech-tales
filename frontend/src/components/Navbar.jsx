@@ -77,10 +77,10 @@ export default function Navbar() {
 
           {/* Logo */}
           <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none', flexShrink: 0 }}>
-            <img src="/logo-icon.png" alt="Tech&Tales Logo" style={{ height: scrolled ? 36 : 40, width: 'auto', display: 'block' }} />
+            <img src="/logo-icon.png" alt="Tech&Tales Logo" style={{ height: scrolled ? 40 : 44, width: 'auto', display: 'block' }} />
             <span style={{
               fontFamily: "'Fraunces', Georgia, serif",
-              fontSize: '1.25rem', fontWeight: 500,
+              fontSize: '1.38rem', fontWeight: 500,
               color: '#F0EDE8', letterSpacing: '-0.02em', lineHeight: 1,
             }}>
               Tech<span style={{
