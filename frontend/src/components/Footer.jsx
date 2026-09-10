@@ -149,7 +149,7 @@ export default function Footer() {
               Get in Touch
             </span>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px' }}>
-              <li><ULink href="mailto:slakshay1002@gmail.com">slakshay1002@gmail.com</ULink></li>
+              <li><ULink href="mailto:info.techandtales@gmail.com">info.techandtales@gmail.com</ULink></li>
               <li>
                 <ULink href="https://wa.me/919910882929" external>
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style={{ opacity: 0.6 }}>
