@@ -3,7 +3,7 @@ import { Lightbulb, Megaphone, Camera, Target, Code2, ShoppingCart, Search, Sett
 import HeroAbout from '../components/HeroAbout'
 import StoryMission from '../components/StoryMission'
 import Reveal from '../components/Reveal'
-import AashnaPhoto from '../../Aashna.jpeg'
+import AashnaPhoto from '../../aashnaa.jpeg'
 import LakshayPhoto from '../../lakshay.jpeg'
 
 const BODY = {
@@ -13,20 +13,6 @@ const BODY = {
 }
 
 const team = [
-  {
-    name: 'Aashna Agarwal',
-    role: 'Creative & Digital Marketing',
-    accent: '#E63C6D',
-    accentSoft: 'rgba(230,60,109,0.14)',
-    avatar: AashnaPhoto,
-    bio: 'Creative strategist and digital marketer who turns brand positioning into visual systems, social content and customer-facing campaigns that build trust and momentum for ambitious brands.',
-    skills: [
-      { label: 'Creative Direction', Icon: Lightbulb },
-      { label: 'Digital Marketing', Icon: Megaphone },
-      { label: 'Social Media', Icon: Camera },
-      { label: 'Brand Strategy', Icon: Target },
-    ],
-  },
   {
     name: 'Lakshay Sharma',
     role: 'Technology & Digital',
@@ -39,6 +25,20 @@ const team = [
       { label: 'E-commerce', Icon: ShoppingCart },
       { label: 'SEO & Analytics', Icon: Search },
       { label: 'Automation', Icon: Settings },
+    ],
+  },
+  {
+    name: 'Aashna Agarwal',
+    role: 'Creative & Digital Marketing',
+    accent: '#E63C6D',
+    accentSoft: 'rgba(230,60,109,0.14)',
+    avatar: AashnaPhoto,
+    bio: 'Creative strategist and digital marketer who turns brand positioning into visual systems, social content and customer-facing campaigns that build trust and momentum for ambitious brands.',
+    skills: [
+      { label: 'Creative Direction', Icon: Lightbulb },
+      { label: 'Digital Marketing', Icon: Megaphone },
+      { label: 'Social Media', Icon: Camera },
+      { label: 'Brand Strategy', Icon: Target },
     ],
   },
 ]
@@ -70,7 +70,7 @@ export default function About() {
           </h2>
 
           <p className="about-team-intro">
-            Aashna brings creative systems, campaigns and customer-facing storytelling, while Lakshay turns every concept into websites, automation and measurable growth engines. Together they keep strategy, design and technology aligned so the work feels beautiful and performs from day one.
+            Lakshay turns every concept into websites, automation and measurable growth engines, while Aashna brings creative systems, campaigns and customer-facing storytelling. Together they keep strategy, design and technology aligned so the work feels beautiful and performs from day one.
           </p>
 
           <Reveal stagger className="about-founders-grid">
