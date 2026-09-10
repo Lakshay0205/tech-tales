@@ -6,6 +6,8 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
+const CONTACT_EMAIL = process.env.CONTACT_EMAIL || 'info.techandtales@gmail.com'
+
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
   port: Number(process.env.SMTP_PORT) || 587,
@@ -23,7 +25,7 @@ app.post('/contact', async (req, res) => {
   try {
     await transporter.sendMail({
       from: `"Tech&Tales Contact" <${process.env.SMTP_USER}>`,
-      to: process.env.FOUNDERS_EMAIL,
+      to: CONTACT_EMAIL,
       replyTo: email,
       subject: `New inquiry from ${name}${company ? ` — ${company}` : ''}`,
       text: `Name: ${name}\nEmail: ${email}\nCompany: ${company || 'N/A'}\nService: ${service || 'N/A'}\n\nMessage:\n${message}`,
@@ -45,6 +47,23 @@ app.post('/contact', async (req, res) => {
         </div>
       `,
     })
+
+    await transporter.sendMail({
+      from: `"Tech&Tales" <${process.env.SMTP_USER}>`,
+      to: email,
+      replyTo: CONTACT_EMAIL,
+      subject: 'Your request has been sent to Tech&Tales',
+      text: `Hi ${name},\n\nYour request has been sent to Tech&Tales. Our team will review it and get back to you within 24 hours.\n\nThanks,\nTech&Tales`,
+      html: `
+        <div style="font-family:Arial,sans-serif;max-width:600px;color:#1f2937;padding:32px">
+          <h2 style="color:#b08b2e;margin:0 0 20px">Your request has been sent to Tech&Tales</h2>
+          <p>Hi ${name},</p>
+          <p>Thanks for reaching out. Our team has received your request and will get back to you within 24 hours.</p>
+          <p>Regards,<br />Tech&Tales</p>
+        </div>
+      `,
+    })
+
     res.json({ ok: true })
   } catch (err) {
     console.error(err)
