@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Hero from '../components/Hero'
 import OurProcess from '../components/OurProcess'
 import CTABanner from '../components/CTABanner'
+import somyaImage from '../../Somyaa.jpeg'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -36,7 +37,7 @@ const whyItems = [
 const projects = [
   { name: 'Terravik',   category: 'Tech Platform', result: '3× inquiry growth in 60 days', img: '/terravik.jpeg', url: 'https://terravik-1m5m.vercel.app/terravik/' },
   { name: 'Hawai Agro', category: 'E-commerce',    result: '40% organic traffic in 3 months', img: '/hawaiagro.jpeg', url: 'https://terravik-1m5m.vercel.app/hawai-agro' },
-  { name: 'TAAR',       category: 'Branding',      result: '2× Instagram engagement rate', img: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80' },
+  { name: 'Somya Singhal', category: 'Social Media', result: 'Consistent Instagram growth and stronger personal-brand presence', img: somyaImage, url: 'https://www.instagram.com/somyasinghalofficial/' },
 ]
 
 /* ── Arrow link ─────────────────────────────────────────────── */

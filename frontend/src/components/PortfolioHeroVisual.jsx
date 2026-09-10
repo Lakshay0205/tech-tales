@@ -248,16 +248,16 @@ export default function PortfolioHeroVisual() {
         <div className="phv-floater">
           <div className="phv-strip">
 
-            {/* Back frame — Branding project */}
+            {/* Back frame — Social media project */}
             <div className="phv-frame phv-frame--back">
               <div className="phv-frame-inner">
                 <div className="phv-frame-img" style={{
-                  backgroundImage: 'url(https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=600&q=60)',
+                  backgroundImage: 'url(/Somyaa.jpeg)',
                   opacity: 0.5,
                 }} />
                 <div className="phv-frame-bar">
-                  <span className="phv-frame-title">TAAR</span>
-                  <span className="phv-frame-tag" style={{ background: 'rgba(78,205,196,0.1)', borderColor: 'rgba(78,205,196,0.25)', color: '#4ECDC4' }}>Branding</span>
+                  <span className="phv-frame-title">Somya Singhal</span>
+                  <span className="phv-frame-tag" style={{ background: 'rgba(78,205,196,0.1)', borderColor: 'rgba(78,205,196,0.25)', color: '#4ECDC4' }}>Social Media</span>
                 </div>
               </div>
             </div>

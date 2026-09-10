@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import somyaImage from '../../Somyaa.jpeg'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -23,9 +24,9 @@ const projects = [
     bg: PLACEHOLDERS[1],
   },
   {
-    name: 'TAAR',
-    built: 'Unified brand system + social media content engine',
-    bg: PLACEHOLDERS[2],
+    name: 'Somya Singhal',
+    built: 'Instagram handling + personal-brand growth system',
+    bg: `url(${somyaImage}) center/cover no-repeat`,
   },
 ]
 

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import PortfolioHeroVisual from '../components/PortfolioHeroVisual'
+import somyaImage from '../../Somyaa.jpeg'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -23,11 +24,11 @@ const projects = [
     accent: '#E63C6D', image: '/hawaiagro.jpeg', glow: 'rgba(74,222,128,0.32)', url: 'https://terravik-1m5m.vercel.app/hawai-agro',
   },
   {
-    name: 'TAAR', category: 'Branding', tags: ['Branding', 'Social Media'],
-    problem: 'Inconsistent visual identity across Instagram, website, and print materials.',
-    solution: 'Complete brand system — logo, color palette, typography, and social media templates.',
-    result: 'Unified brand across all channels. 2× engagement rate on Instagram.', year: '2024',
-    accent: '#D4AF37', image: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80', glow: 'rgba(230,60,109,0.28)',
+    name: 'Somya Singhal', category: 'Social Media', tags: ['Social Media', 'Branding'],
+    problem: 'Instagram presence lacked consistency, positioning, and a clear content system for audience growth.',
+    solution: 'Designed a stronger personal-brand aesthetic, content strategy, and social media handling system for consistent engagement.',
+    result: 'Sharper personal-brand presence with stronger Instagram engagement and better content consistency.', year: '2025',
+    accent: '#E63C6D', image: somyaImage, glow: 'rgba(230,60,109,0.28)', url: 'https://www.instagram.com/somyasinghalofficial/',
   },
 ]
 
