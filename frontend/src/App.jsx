@@ -17,25 +17,35 @@ gsap.registerPlugin(ScrollTrigger)
 
 function ScrollManager() {
   const { pathname } = useLocation()
-  useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
-    document.documentElement.scrollTop = 0
-    document.body.scrollTop = 0
 
-    const frame = requestAnimationFrame(() => {
+  useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual'
+    }
+
+    const resetScroll = () => {
       window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
       document.documentElement.scrollTop = 0
       document.body.scrollTop = 0
-    })
+      if (document.scrollingElement) {
+        document.scrollingElement.scrollTop = 0
+      }
+    }
+
+    resetScroll()
+
+    const frame = requestAnimationFrame(resetScroll)
     const timeoutId = window.setTimeout(() => {
+      resetScroll()
       ScrollTrigger.getAll().forEach(instance => instance.refresh())
-    }, 50)
+    }, 80)
 
     return () => {
       cancelAnimationFrame(frame)
       window.clearTimeout(timeoutId)
     }
   }, [pathname])
+
   return null
 }
 
