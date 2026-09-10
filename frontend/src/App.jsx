@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useLayoutEffect } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -18,32 +18,43 @@ gsap.registerPlugin(ScrollTrigger)
 function ScrollManager() {
   const { pathname } = useLocation()
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if ('scrollRestoration' in window.history) {
+      const previous = window.history.scrollRestoration
       window.history.scrollRestoration = 'manual'
-    }
 
-    const resetScroll = () => {
-      window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
-      document.documentElement.scrollTop = 0
-      document.body.scrollTop = 0
-      if (document.scrollingElement) {
-        document.scrollingElement.scrollTop = 0
+      const resetScroll = () => {
+        const root = document.scrollingElement || document.documentElement || document.body
+        if (root) {
+          root.scrollTop = 0
+          root.scrollLeft = 0
+        }
+        document.documentElement.style.scrollBehavior = 'auto'
+        document.body.style.scrollBehavior = 'auto'
+        window.scrollTo(0, 0)
+      }
+
+      resetScroll()
+      requestAnimationFrame(resetScroll)
+      const timeoutId = window.setTimeout(() => {
+        resetScroll()
+        ScrollTrigger.getAll().forEach(instance => instance.refresh())
+      }, 120)
+
+      return () => {
+        window.history.scrollRestoration = previous
+        document.documentElement.style.scrollBehavior = ''
+        document.body.style.scrollBehavior = ''
+        window.clearTimeout(timeoutId)
       }
     }
+  }, [pathname])
 
-    resetScroll()
-
-    const frame = requestAnimationFrame(resetScroll)
+  useEffect(() => {
     const timeoutId = window.setTimeout(() => {
-      resetScroll()
       ScrollTrigger.getAll().forEach(instance => instance.refresh())
-    }, 80)
-
-    return () => {
-      cancelAnimationFrame(frame)
-      window.clearTimeout(timeoutId)
-    }
+    }, 150)
+    return () => window.clearTimeout(timeoutId)
   }, [pathname])
 
   return null
