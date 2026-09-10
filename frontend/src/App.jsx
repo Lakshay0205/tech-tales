@@ -50,13 +50,6 @@ function ScrollManager() {
     }
   }, [pathname])
 
-  useEffect(() => {
-    const timeoutId = window.setTimeout(() => {
-      ScrollTrigger.getAll().forEach(instance => instance.refresh())
-    }, 150)
-    return () => window.clearTimeout(timeoutId)
-  }, [pathname])
-
   return null
 }
 
@@ -73,9 +66,9 @@ function PageBackground() {
 }
 
 const pageVariants = {
-  initial: { opacity: 0, filter: 'blur(2px)' },
-  enter:   { opacity: 1, filter: 'blur(0px)', transition: { duration: 0.22, ease: 'easeOut' } },
-  exit:    { opacity: 0, filter: 'blur(1px)', transition: { duration: 0.14, ease: 'easeIn' } },
+  initial: { opacity: 0 },
+  enter:   { opacity: 1, transition: { duration: 0.16, ease: 'easeOut' } },
+  exit:    { opacity: 0, transition: { duration: 0.08, ease: 'easeIn' } },
 }
 
 function PageFallback() {
@@ -85,7 +78,7 @@ function PageFallback() {
 function AnimatedRoutes() {
   const location = useLocation()
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence>
       <motion.div
         key={location.pathname}
         variants={pageVariants}
