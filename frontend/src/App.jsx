@@ -18,15 +18,23 @@ gsap.registerPlugin(ScrollTrigger)
 function ScrollManager() {
   const { pathname } = useLocation()
   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+    document.documentElement.scrollTop = 0
+    document.body.scrollTop = 0
+
     const frame = requestAnimationFrame(() => {
       window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
-      const refresh = () => {
-        ScrollTrigger.getAll().forEach(instance => instance.refresh())
-      }
-      const timeoutId = window.setTimeout(refresh, 50)
-      return () => window.clearTimeout(timeoutId)
+      document.documentElement.scrollTop = 0
+      document.body.scrollTop = 0
     })
-    return () => cancelAnimationFrame(frame)
+    const timeoutId = window.setTimeout(() => {
+      ScrollTrigger.getAll().forEach(instance => instance.refresh())
+    }, 50)
+
+    return () => {
+      cancelAnimationFrame(frame)
+      window.clearTimeout(timeoutId)
+    }
   }, [pathname])
   return null
 }
