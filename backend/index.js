@@ -4,7 +4,8 @@ import cors from 'cors'
 
 const app = express()
 app.use(express.json())
-app.use(cors())
+const allowedOrigin = process.env.FRONTEND_URL
+app.use(cors({ origin: allowedOrigin || true }))
 
 const CONTACT_EMAIL = process.env.CONTACT_EMAIL || 'info.techandtales@gmail.com'
 
@@ -17,6 +18,8 @@ const transporter = nodemailer.createTransport({
     pass: process.env.SMTP_PASS,
   },
 })
+
+app.get('/health', (_req, res) => res.json({ ok: true }))
 
 app.post('/contact', async (req, res) => {
   const { name, email, company, service, message } = req.body
