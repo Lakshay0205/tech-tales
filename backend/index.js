@@ -8,11 +8,13 @@ const allowedOrigin = process.env.FRONTEND_URL
 app.use(cors({ origin: allowedOrigin || true }))
 
 const CONTACT_EMAIL = process.env.CONTACT_EMAIL || 'techandtales.info@gmail.com'
+const SMTP_PORT = Number(process.env.SMTP_PORT) || 465
+const SMTP_SECURE = process.env.SMTP_SECURE === 'true' || SMTP_PORT === 465
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
-  port: Number(process.env.SMTP_PORT) || 587,
-  secure: false,
+  port: SMTP_PORT,
+  secure: SMTP_SECURE,
   connectionTimeout: 10000,
   greetingTimeout: 10000,
   socketTimeout: 15000,
