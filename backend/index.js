@@ -7,7 +7,7 @@ app.use(express.json())
 const allowedOrigin = process.env.FRONTEND_URL
 app.use(cors({ origin: allowedOrigin || true }))
 
-const CONTACT_EMAIL = process.env.CONTACT_EMAIL || 'info.techandtales@gmail.com'
+const CONTACT_EMAIL = process.env.CONTACT_EMAIL || 'techandtales.info@gmail.com'
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,

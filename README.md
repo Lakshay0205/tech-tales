@@ -54,7 +54,7 @@ On Vercel, add a `vercel.json` rewrite:
 ```
 
 ## Customization Checklist
- - [ ] Replace `hello@techtales.in` with real email (Footer, Contact)
+ - [x] Use `techandtales.info@gmail.com` for contact and SMTP email
 - [ ] Replace WhatsApp number `919999999999` with real number (Footer, Contact)
 - [ ] Update founder names and bios in `About.jsx`
 - [ ] Add real project screenshots/images to portfolio cards
