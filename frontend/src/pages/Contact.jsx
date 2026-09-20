@@ -65,15 +65,19 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setStatus('sending')
+    const controller = new AbortController()
+    const timeoutId = setTimeout(() => controller.abort(), 20000)
     try {
       const res = await fetch(`${API_BASE_URL}/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
+        signal: controller.signal,
       })
       if (res.ok) { setStatus('sent'); setForm({ name: '', email: '', company: '', message: '', service: '' }) }
       else setStatus('error')
     } catch { setStatus('error') }
+    finally { clearTimeout(timeoutId) }
   }
 
   return (

@@ -13,6 +13,9 @@ const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
   port: Number(process.env.SMTP_PORT) || 587,
   secure: false,
+  connectionTimeout: 10000,
+  greetingTimeout: 10000,
+  socketTimeout: 15000,
   auth: {
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
@@ -70,7 +73,7 @@ app.post('/contact', async (req, res) => {
     res.json({ ok: true })
   } catch (err) {
     console.error(err)
-    res.status(500).json({ error: 'Failed to send email' })
+    res.status(502).json({ error: 'Email service unavailable' })
   }
 })
 
