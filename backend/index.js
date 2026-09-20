@@ -8,6 +8,7 @@ const allowedOrigin = process.env.FRONTEND_URL
 app.use(cors({ origin: allowedOrigin || true }))
 
 const CONTACT_EMAIL = process.env.CONTACT_EMAIL || 'techandtales.info@gmail.com'
+const FROM_EMAIL = process.env.FROM_EMAIL || 'techandtales.info@gmail.com'
 const SMTP_PORT = Number(process.env.SMTP_PORT) || 465
 const SMTP_SECURE = process.env.SMTP_SECURE === 'true' || SMTP_PORT === 465
 
@@ -32,7 +33,7 @@ app.post('/contact', async (req, res) => {
 
   try {
     await transporter.sendMail({
-      from: `"Tech&Tales Contact" <${process.env.SMTP_USER}>`,
+      from: `"Tech&Tales Contact" <${FROM_EMAIL}>`,
       to: CONTACT_EMAIL,
       replyTo: email,
       subject: `New inquiry from ${name}${company ? ` — ${company}` : ''}`,
@@ -57,7 +58,7 @@ app.post('/contact', async (req, res) => {
     })
 
     await transporter.sendMail({
-      from: `"Tech&Tales" <${process.env.SMTP_USER}>`,
+      from: `"Tech&Tales" <${FROM_EMAIL}>`,
       to: email,
       replyTo: CONTACT_EMAIL,
       subject: 'Your request has been sent to Tech&Tales',
