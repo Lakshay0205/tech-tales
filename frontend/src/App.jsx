@@ -15,6 +15,22 @@ import Contact from './pages/Contact'
 
 gsap.registerPlugin(ScrollTrigger)
 
+const GA_MEASUREMENT_ID = 'G-1FRMZRZ1ZC'
+
+function AnalyticsTracker() {
+  const location = useLocation()
+
+  useEffect(() => {
+    if (typeof window.gtag !== 'function') return
+
+    window.gtag('config', GA_MEASUREMENT_ID, {
+      page_path: `${location.pathname}${location.search}`,
+    })
+  }, [location.pathname, location.search])
+
+  return null
+}
+
 function ScrollManager() {
   const { pathname } = useLocation()
 
@@ -103,6 +119,7 @@ function AnimatedRoutes() {
 export default function App() {
   return (
     <BrowserRouter>
+      <AnalyticsTracker />
       <IntroLoader />
       <PageBackground />
       <ScrollManager />
