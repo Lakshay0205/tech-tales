@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import ContactHeroVisual from '../components/ContactHeroVisual'
+import { trackEvent } from '../analytics'
 
 const API_BASE_URL = (import.meta.env.VITE_API_URL || '/api').replace(/\/$/, '')
 
@@ -74,9 +75,19 @@ export default function Contact() {
         body: JSON.stringify(form),
         signal: controller.signal,
       })
-      if (res.ok) { setStatus('sent'); setForm({ name: '', email: '', company: '', message: '', service: '' }) }
-      else setStatus('error')
-    } catch { setStatus('error') }
+      if (res.ok) {
+        trackEvent('contact_form_submit', { form_status: 'success', service: form.service || 'not_selected' })
+        setStatus('sent')
+        setForm({ name: '', email: '', company: '', message: '', service: '' })
+      }
+      else {
+        trackEvent('contact_form_submit', { form_status: 'error' })
+        setStatus('error')
+      }
+    } catch {
+      trackEvent('contact_form_submit', { form_status: 'error' })
+      setStatus('error')
+    }
     finally { clearTimeout(timeoutId) }
   }
 

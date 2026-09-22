@@ -12,6 +12,7 @@ import Services from './pages/Services'
 import Portfolio from './pages/Portfolio'
 import Pricing from './pages/Pricing'
 import Contact from './pages/Contact'
+import { getSafeClickLabel, trackEvent } from './analytics'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -21,11 +22,73 @@ function AnalyticsTracker() {
   const location = useLocation()
 
   useEffect(() => {
+    const handleClick = (event) => {
+      const target = event.target.closest?.('a, button')
+      if (!target) return
+
+      const href = target.getAttribute('href') || ''
+      const label = getSafeClickLabel(target)
+      const currentPage = window.location.pathname
+
+      if (href.includes('wa.me')) {
+        trackEvent('whatsapp_click', { page_path: currentPage, link_label: label })
+      } else if (href.startsWith('mailto:')) {
+        trackEvent('email_click', { page_path: currentPage, link_label: label })
+      } else if (target.classList.contains('btn-primary')) {
+        trackEvent('cta_click', { page_path: currentPage, cta_label: label })
+      } else if (href.startsWith('http')) {
+        trackEvent('external_link_click', { page_path: currentPage, link_label: label })
+      }
+    }
+
+    document.addEventListener('click', handleClick)
+    return () => document.removeEventListener('click', handleClick)
+  }, [])
+
+  useEffect(() => {
     if (typeof window.gtag !== 'function') return
 
     window.gtag('config', GA_MEASUREMENT_ID, {
       page_path: `${location.pathname}${location.search}`,
     })
+
+    const startedAt = Date.now()
+    const reached = new Set()
+    let maxScrollDepth = 0
+    let exitTracked = false
+    const thresholds = [25, 50, 75, 90, 100]
+
+    const sendExit = () => {
+      if (exitTracked) return
+      exitTracked = true
+      trackEvent('page_exit', {
+        page_path: location.pathname,
+        engagement_time_seconds: Math.round((Date.now() - startedAt) / 1000),
+        max_scroll_depth: maxScrollDepth,
+      })
+    }
+
+    const handleScroll = () => {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight
+      const depth = scrollable > 0 ? Math.min(100, Math.round((window.scrollY / scrollable) * 100)) : 100
+      maxScrollDepth = Math.max(maxScrollDepth, depth)
+      thresholds.forEach(threshold => {
+        if (depth >= threshold && !reached.has(threshold)) {
+          reached.add(threshold)
+          trackEvent('scroll_depth', { page_path: location.pathname, percent: threshold })
+        }
+      })
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('pagehide', sendExit)
+    handleScroll()
+
+    return () => {
+      sendExit()
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('pagehide', sendExit)
+    }
   }, [location.pathname, location.search])
 
   return null
