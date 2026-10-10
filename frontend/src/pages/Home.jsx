@@ -5,7 +5,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Hero from '../components/Hero'
 import OurProcess from '../components/OurProcess'
 import CTABanner from '../components/CTABanner'
-import somyaImage from '../../Somyaa.jpeg'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -31,13 +30,12 @@ const whyItems = [
   { n: '02', title: 'Creative Meets Performance', desc: 'Great ideas mean more when they deliver results. We bring creativity and data together to build marketing that performs.', rot: '3deg', icon: 'lightbulb' },
   { n: '03', title: 'One Team. One Direction.', desc: 'Strategy, content, media, SEO and creative work together under one roof, keeping your brand consistent at every touchpoint.', rot: '-3deg', icon: 'users' },
   { n: '04', title: 'Clear, Honest & Accountable', desc: 'No confusing reports. No empty promises. Just clear communication, transparent insights and work you can measure.', rot: '4deg', icon: 'shield' },
-  { n: '05', title: 'Built for Momentum', desc: 'Every decision creates useful progress now and a stronger foundation for what comes next.', rot: '-2deg', icon: 'spark' },
 ]
 
 const projects = [
   { name: 'Terravik',   category: 'Tech Platform', result: '3× inquiry growth in 60 days', img: '/terravik.jpeg', url: 'https://terravik-1m5m.vercel.app/terravik/' },
   { name: 'Hawai Agro', category: 'E-commerce',    result: '40% organic traffic in 3 months', img: '/hawaiagro.jpeg', url: 'https://terravik-1m5m.vercel.app/hawai-agro' },
-  { name: 'Somya Singhal', category: 'Social Media', result: 'Consistent Instagram growth and stronger personal-brand presence', img: somyaImage, url: 'https://www.instagram.com/somyasinghalofficial/' },
+  { name: 'TAAR',       category: 'Branding',      result: '2× Instagram engagement rate', img: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80' },
 ]
 
 /* ── Arrow link ─────────────────────────────────────────────── */
@@ -270,31 +268,18 @@ function WhyCard({ item, index, allRefs, itemsRef }) {
         <path d="M12 3 4 6v7c0 6 4 9 8 10 4-1 8-4 8-10V6Z" />
         <path d="m9.5 12 2 2 4.5-5" />
       </svg>
-    ),
-    spark: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.55" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z" />
-        <path d="m19 16 .8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8L19 16Z" />
-      </svg>
     )
   }
 
   return (
     <div
       ref={el => { cardRef.current = el; allRefs.current[index] = el; itemsRef.current[index] = el }}
-      className={`why-card-shell why-card-shell--${index + 1}`}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onMouseEnter={handleMouseEnter}
       style={{
         padding: '44px 40px',
-        background: [
-          'radial-gradient(circle at 100% 0%, rgba(212,175,55,0.24), transparent 44%), linear-gradient(135deg, rgba(212,175,55,0.10), transparent 46%), linear-gradient(150deg, rgba(28,38,54,0.98), rgba(9,14,23,1))',
-          'radial-gradient(circle at 100% 0%, rgba(230,60,109,0.28), transparent 44%), linear-gradient(135deg, rgba(230,60,109,0.12), transparent 46%), linear-gradient(150deg, rgba(48,27,47,0.98), rgba(12,14,24,1))',
-          'radial-gradient(circle at 100% 0%, rgba(78,205,196,0.27), transparent 44%), linear-gradient(135deg, rgba(78,205,196,0.11), transparent 46%), linear-gradient(150deg, rgba(18,48,55,0.98), rgba(8,16,24,1))',
-          'radial-gradient(circle at 100% 0%, rgba(167,139,250,0.27), transparent 44%), linear-gradient(135deg, rgba(167,139,250,0.11), transparent 46%), linear-gradient(150deg, rgba(42,32,68,0.98), rgba(12,13,25,1))',
-          'radial-gradient(circle at 100% 0%, rgba(244,180,0,0.28), transparent 44%), linear-gradient(135deg, rgba(244,180,0,0.11), transparent 46%), linear-gradient(150deg, rgba(52,43,22,0.98), rgba(15,14,21,1))',
-        ][index],
+        background: 'rgba(18,22,31,0.6)',
         backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)',
         borderRadius: '20px',
         border: '1px solid rgba(255,255,255,0.08)',
@@ -627,14 +612,14 @@ export default function Home() {
         </div>
 
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <div ref={workHeadRef} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '32px', marginBottom: '72px' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+          <div ref={workHeadRef} style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', flexWrap: 'wrap', gap: '32px', marginBottom: '72px' }}>
+            <div>
               <span className="eyebrow" style={{ display: 'inline-flex' }}>Featured Work</span>
-              <h2 style={{ ...H2, marginTop: '28px', marginBottom: '0' }}>Work that moved the <span className="supporting-word">needle</span>.</h2>
-              <p style={{ ...BODY, maxWidth: '340px', marginTop: '18px', marginLeft: 'auto', fontSize: 'clamp(1rem, 1.2vw, 1.08rem)', lineHeight: 1.78, fontWeight: 300, textAlign: 'right' }}>
-                Real brands. Real work. Real results.
-              </p>
+              <h2 style={{ ...H2, marginTop: '28px' }}>Work that moved the <span className="supporting-word">needle</span>.</h2>
             </div>
+            <p style={{ ...BODY, maxWidth: '340px', fontSize: 'clamp(1rem, 1.2vw, 1.08rem)', lineHeight: 1.78, fontWeight: 300 }}>
+              Real brands. Real work. Real results.
+            </p>
           </div>
 
           {/* Asymmetric grid: 1 large left + 2 smaller right */}
