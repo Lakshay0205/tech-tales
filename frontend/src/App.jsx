@@ -12,6 +12,7 @@ import Services from './pages/Services'
 import Portfolio from './pages/Portfolio'
 import Pricing from './pages/Pricing'
 import Contact from './pages/Contact'
+import PrivacyPage from './pages/PrivacyPage'
 import { getSafeClickLabel, trackEvent } from './analytics'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -173,6 +174,7 @@ function AnimatedRoutes() {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/pricing"   element={<Pricing />} />
           <Route path="/contact"   element={<Contact />} />
+          <Route path="/privacy-policy" element={<PrivacyPage />} />
         </Routes>
       </motion.div>
     </AnimatePresence>

@@ -24,7 +24,7 @@ function ULink({ to, href, children, external = false }) {
   return <Link to={to} {...props}>{children}</Link>
 }
 
-const navLinks = [['/', 'Home'], ['/about', 'About'], ['/services', 'Services'], ['/portfolio', 'Portfolio'], ['/pricing', 'Pricing'], ['/contact', 'Contact']]
+const navLinks = [['/', 'Home'], ['/about', 'About'], ['/services', 'Services'], ['/portfolio', 'Portfolio'], ['/pricing', 'Pricing'], ['/contact', 'Contact'], ['/privacy-policy', 'Privacy Policy']]
 
 export default function Footer() {
   const footerRef = useRef(null)
@@ -210,13 +210,17 @@ export default function Footer() {
           }}>
             © 2025 Ashnalakshay. All rights reserved.
           </p>
-          <p style={{
-            fontFamily: "'Geist', system-ui, sans-serif",
-            fontSize: '0.6875rem', fontWeight: 400,
-            letterSpacing: '0.08em', color: '#4B5563',
-          }}>
-            Built by the founders.
-          </p>
+          <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
+            <ULink to="/privacy-policy">Privacy Policy</ULink>
+            <p style={{
+              fontFamily: "'Geist', system-ui, sans-serif",
+              fontSize: '0.6875rem', fontWeight: 400,
+              letterSpacing: '0.08em', color: '#4B5563',
+              margin: 0,
+            }}>
+              Built by the founders.
+            </p>
+          </div>
         </div>
       </div>
     </footer>
