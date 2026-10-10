@@ -1,6 +1,6 @@
 function PrivacyPage() {
   return (
-    <main style={{ maxWidth: 1100, margin: '0 auto', padding: '120px 24px 100px', color: '#F3F0EA' }}>
+    <main style={{ maxWidth: 1100, margin: '0 auto', padding: '120px 24px 100px', color: '#F3F0EA', position: 'relative', zIndex: 1 }}>
       <h1 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 'clamp(2.2rem, 5vw, 4rem)', marginBottom: '20px' }}>
         Privacy Policy
       </h1>
