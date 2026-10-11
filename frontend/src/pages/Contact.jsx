@@ -173,7 +173,7 @@ export default function Contact() {
             <div ref={formRef}>
               {status === 'sent' ? (
                 <>
-                <div style={{
+                <div id="contact-form-success" style={{
                   padding: '80px 52px', textAlign: 'center',
                   background: 'linear-gradient(145deg, rgba(17,21,32,0.88) 0%, rgba(11,15,26,0.94) 100%)',
                   borderRadius: '24px',
